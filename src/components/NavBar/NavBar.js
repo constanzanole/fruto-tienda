@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
-import '../App.css';
+import '../../App.css';
+import CartItem from '../CartItem/CartItem';
 
 function NavBar() {
 	const [showLinks, setShowLinks] = useState(false);
@@ -29,6 +30,7 @@ function NavBar() {
 			<div className="rightSide">
 				<input type="text" placeholder="Buscar...." />
 				<button>Buscar</button>
+				<CartItem />
 			</div>
 		</div>
 	);
