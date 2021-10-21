@@ -19,7 +19,7 @@ const CatalogueItem = ({ producto }) => {
 	return (
 		<div>
 			<h1>{producto.nombre}</h1>
-			<img src={producto.imagen} alt={producto.nombre}></img>
+			<img src={producto.imagen} alt={producto.nombre} />
 			<button onClick={decrement}>-</button>
 			<span>{quantity}</span>
 			<button onClick={increment}>+</button>

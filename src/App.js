@@ -9,10 +9,7 @@ function App() {
 	return (
 		<div className="App">
 			<Navbar />
-			<Catalogue
-				greeting={'TIENDA ONLINE DE @FRUTO.AR'}
-				productos={productos}
-			/>
+			<Catalogue greeting={'TIENDA ONLINE DE @FRUTO.AR'} />
 		</div>
 	);
 }
