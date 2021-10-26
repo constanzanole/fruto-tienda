@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import productos from '../../data/productos';
 import CatalogueItem from '../CatalogueItem/CatalogueItem';
+import './Catalogue.css';
 
 const Catalogue = ({ greeting }) => {
 	const [products, setProducts] = useState([]);
@@ -26,9 +27,11 @@ const Catalogue = ({ greeting }) => {
 	return (
 		<div>
 			<h1>{greeting}</h1>
-			<div>
+			<div className="card-catalogue">
 				{products.length ? (
-					products.map((producto) => <CatalogueItem producto={producto} />)
+					products.map((producto) => (
+						<CatalogueItem producto={producto} key={producto.id} />
+					))
 				) : (
 					<h1>Loading...</h1>
 				)}
