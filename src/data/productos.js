@@ -10,6 +10,12 @@ export default [
 		imagen: anillo,
 		quantity: 1,
 		stock: 5,
+		description: 'Anillo regulable',
+		serie: 'SERIE EMERGER',
+		tecnica: 'Técnica: Calado y desplegado',
+		materiales: 'Material: Bronce esmaltado',
+		price: "Precio $3300"
+		
 	},
 	{
 		id: '2',
@@ -18,6 +24,11 @@ export default [
 		imagen: collar,
 		quantity: 1,
 		stock: 20,
+		description: 'Gargantilla',
+		serie: 'SERIE EMERGER',
+		tecnica: 'Técnica: Calado y desplegado',
+		materiales: 'Material: Bronce esmaltado',
+		price: "Precio $7800"
 	},
 	{
 		id: '3',
@@ -26,5 +37,10 @@ export default [
 		imagen: ArosPerla,
 		quantity: 1,
 		stock: 20,
+		description: 'Aros',
+		serie: 'SERIE EMERGER',
+		tecnica: 'Técnica: Calado y desplegado',
+		materiales: 'Material: Bronce esmaltado',
+		price: "Precio $4800"
 	},
 ];

@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
 import productos from '../../data/productos';
 import CatalogueItem from '../CatalogueItem/CatalogueItem';
 import './Catalogue.css';
 
 const Catalogue = ({ greeting }) => {
 	const [products, setProducts] = useState([]);
+
+	const history = useHistory();
 
 	const fetchProducts = (data) => {
 		return new Promise((resolve, reject) => {
@@ -30,7 +33,11 @@ const Catalogue = ({ greeting }) => {
 			<div className="card-catalogue">
 				{products.length ? (
 					products.map((producto) => (
-						<CatalogueItem producto={producto} key={producto.id} />
+						<CatalogueItem
+							producto={producto}
+							key={producto.id}
+							history={history}
+						/>
 					))
 				) : (
 					<h1>Loading...</h1>

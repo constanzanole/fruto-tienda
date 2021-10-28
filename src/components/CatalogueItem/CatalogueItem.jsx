@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import cart from '../../data/cart';
 import './CatalogueItem.css';
 
-const CatalogueItem = ({ producto }) => {
+const CatalogueItem = ({ producto, history }) => {
 	const [quantity, setQuantity] = useState(producto.quantity);
 
 	const decrement = () => {
@@ -19,8 +19,19 @@ const CatalogueItem = ({ producto }) => {
 
 	return (
 		<div className="card">
-			<h2 className="card-titulo">{producto.nombre}</h2>
-			<img src={producto.imagen} alt={producto.nombre} className="Card-Imagen" />
+			<h2
+				className="card-titulo"
+				onClick={() => {
+					history.push(`/producto/productId=${producto.id}`);
+				}}
+			>
+				{producto.nombre}
+			</h2>
+			<img
+				src={producto.imagen}
+				alt={producto.nombre}
+				className="Card-Imagen"
+			/>
 			<button onClick={decrement}>-</button>
 			<span>{quantity}</span>
 			<button onClick={increment}>+</button>
