@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import productos from '../../data/productos';
 import './DetailItem.css';
 
-
 export const DetailItem = () => {
 	const [product, setProduct] = useState(null);
 
@@ -12,7 +11,6 @@ export const DetailItem = () => {
 
 	const getItems = () => {
 		const id = window.location.href.split('=')[1];
-		console.log({ id });
 
 		const product = productos.filter((producto) => producto.id === id);
 
