@@ -9,26 +9,29 @@ import { DetailItem } from './components/DetailItem/DetailItem';
 import { useState } from 'react';
 
 function App() {
-	const [category, setCategory] = useState();
-	return (
-		<Router>
-			<div className="App">
-				<Switch>
-					<Route exact path="/">
-						<Navbar setCategory={setCategory} />
-						<Catalogue
-							greeting={'TIENDA ONLINE DE @FRUTO.AR'}
-							category={category}
-						/>
-					</Route>
-					<Route exact path="/producto/:productId">
-						<Navbar />
-						<DetailItem productos={productos} />
-					</Route>
-				</Switch>
-			</div>
-		</Router>
-	);
+  const [category, setCategory] = useState();
+  return (
+    <Router>
+      <div className='App'>
+        <Switch>
+          <Route exact path='/'>
+            <Navbar setCategory={setCategory} />
+            <Catalogue
+              greeting={'TIENDA ONLINE DE @FRUTO.AR'}
+              category={category}
+            />
+          </Route>
+          <Route exact path='/producto/:productId'>
+            <Navbar />
+            <DetailItem productos={productos} />
+          </Route>
+          <Route path='/cart'>
+            <Navbar setCategory={setCategory} />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
 }
 
 export default App;
