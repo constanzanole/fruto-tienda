@@ -12,6 +12,7 @@ import { CartProvider } from './context/CartContext';
 function App() {
   const [category, setCategory] = useState();
   return (
+
     <CartProvider>
       <Router>
         <div className='App'>

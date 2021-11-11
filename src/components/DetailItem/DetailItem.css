@@ -1,27 +1,25 @@
 body,
 html {
-   padding: 0;
-    	
+  padding: 0;
 }
 
 .card-detail {
-    
-	width: 600px;
-	height: 700px;
-	border: 1px solid #ddd;
-	border-radius: 5px;
-	box-shadow: rgb(212, 212, 212);
-	margin: 100px;
-	box-shadow: 3px 3px 10px 3px rgb(199, 196, 196);
-    align-self: center;
+  width: 600px;
+  height: 800px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: rgb(212, 212, 212);
+  margin: 100px;
+  box-shadow: 3px 3px 10px 3px rgb(199, 196, 196);
+  align-self: center;
 }
 
 .Card-Imagen {
-	width: 100%;
+  width: 100%;
 }
 
 .card-titulo {
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	font-size: 18px;
-    color: rgb(90, 87, 87);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 18px;
+  color: rgb(90, 87, 87);
 }
