@@ -14,8 +14,7 @@ export default [
 		serie: 'SERIE EMERGER',
 		tecnica: 'Técnica: Calado y desplegado',
 		materiales: 'Material: Bronce esmaltado',
-		price: "Precio $3300"
-		
+		price: 3300,
 	},
 	{
 		id: '2',
@@ -28,7 +27,7 @@ export default [
 		serie: 'SERIE EMERGER',
 		tecnica: 'Técnica: Calado y desplegado',
 		materiales: 'Material: Bronce esmaltado',
-		price: "Precio $7800"
+		price: 7800,
 	},
 	{
 		id: '3',
@@ -41,6 +40,6 @@ export default [
 		serie: 'SERIE EMERGER',
 		tecnica: 'Técnica: Calado y desplegado',
 		materiales: 'Material: Bronce esmaltado',
-		price: "Precio $4800"
+		price: 4800,
 	},
 ];

@@ -1,10 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
+import { useHistory } from 'react-router';
 import '../../App.css';
+import { CartContext } from '../../context/CartContext';
 import CartItem from '../CartItem/CartItem';
 
 function NavBar({ setCategory }) {
 	const [showLinks, setShowLinks] = useState(false);
+
+	const { cart } = useContext(CartContext);
+
+	const history = useHistory();
+
+	const navigateToCart = () => {
+		history.push('/cart');
+	};
 
 	return (
 		<div className="Navbar">
@@ -55,7 +65,13 @@ function NavBar({ setCategory }) {
 			<div className="rightSide">
 				<input type="text" placeholder="Buscar...." />
 				<button>Buscar</button>
-				<CartItem />
+				<CartItem
+					navigateToCart={navigateToCart}
+					cantItems={cart.reduce(
+						(prevVal, currentVal) => prevVal + currentVal.quantity,
+						0
+					)}
+				/>
 			</div>
 		</div>
 	);

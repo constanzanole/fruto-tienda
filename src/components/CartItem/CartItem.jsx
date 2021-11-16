@@ -1,14 +1,13 @@
 import React from 'react';
 import './CartItem.css';
 import { IoCartOutline } from 'react-icons/io5';
-import productos from '../../data/productos';
 
-const CartItem = () => {
+const CartItem = ({ navigateToCart, cantItems }) => {
 	return (
-		<div className="cart-container">
+		<div className="cart-container" onClick={navigateToCart}>
 			<IoCartOutline color={'white'} size={32} />
 			<div>
-				<span>{productos.length}</span>
+				<span style={{ color: 'white' }}>{cantItems}</span>
 			</div>
 		</div>
 	);
