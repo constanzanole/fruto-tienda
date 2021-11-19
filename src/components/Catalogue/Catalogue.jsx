@@ -1,36 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
-import productos from '../../data/productos';
+import { ProductsContext } from '../../context/ProductsContext';
 import CatalogueItem from '../CatalogueItem/CatalogueItem';
 import './Catalogue.css';
 
 const Catalogue = ({ greeting, category }) => {
-	const [products, setProducts] = useState([]);
-
-	const [loading, setLoading] = useState(false);
-
-	const history = useHistory();
-
-	const fetchProducts = (data) => {
-		setLoading(true);
-		return new Promise((resolve, reject) => {
-			setTimeout(() => {
-				if (data) {
-					resolve(data);
-				} else {
-					reject('No se han encontrado productos');
-				}
-				setLoading(false);
-			}, 3000);
-		});
-	};
+	const { products, loading, fetchProducts } = useContext(ProductsContext);
+	const [productos, setProducts] = useState([]);
 
 	useEffect(() => {
-		setLoading(false);
-		fetchProducts(productos)
-			.then((res) => setProducts(res))
-			.catch((err) => console.log(err));
+		fetchProducts();
+		setProducts(products);
+		console.log(products);
 	}, []);
+
+	const history = useHistory();
 
 	useEffect(() => {
 		if (category)
@@ -38,18 +22,14 @@ const Catalogue = ({ greeting, category }) => {
 		else {
 			setProducts(productos);
 		}
-		console.log({
-			category,
-			products,
-		});
 	}, [category]);
 
 	return (
 		<div>
 			<h1>{greeting}</h1>
 			<div className="card-catalogue">
-				{products.length > 0 && !loading
-					? products.map((producto) => (
+				{productos.length > 0 && !loading
+					? productos.map((producto) => (
 							<CatalogueItem
 								producto={producto}
 								key={producto.id}

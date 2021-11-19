@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
-import productos from '../../data/productos';
+import { ProductsContext } from '../../context/ProductsContext';
 import { ItemCount } from '../ItemCount/ItemCount';
 import './DetailItem.css';
 
 export const DetailItem = () => {
-	const [product, setProduct] = useState(null);
+	const [producto, setProduct] = useState(null);
+
+	const { products } = useContext(ProductsContext);
 
 	const [itemCount, setItemCount] = useState(0);
 
@@ -18,22 +20,22 @@ export const DetailItem = () => {
 	const getItems = () => {
 		const id = window.location.href.split('=')[1];
 
-		const product = productos.filter((producto) => producto.id === id);
+		const product = products.filter((producto) => producto.id === id);
 
 		setProduct(product[0]);
 	};
 	return (
 		<div className="card-detail">
-			{product && (
+			{producto && (
 				<>
 					<ItemCount itemCount={itemCount} onAdd={setItemCount} />
-					<h1 className="card-titulo">{product.nombre}</h1>
-					<img className="card-imagen" src={product.imagen} />
-					<h2>{product.description}</h2>
-					<h3>{product.serie}</h3>
-					<h4>{product.tecnica}</h4>
-					<h4>{product.materiales}</h4>
-					<h5>Precio: ${product.price}</h5>
+					<h1 className="card-titulo">{producto.nombre}</h1>
+					<img className="card-imagen" src={producto.imagen} />
+					<h2>{producto.description}</h2>
+					<h3>{producto.serie}</h3>
+					<h4>{producto.tecnica}</h4>
+					<h4>{producto.materiales}</h4>
+					<h5>Precio: ${producto.price}</h5>
 
 					<button onClick={() => history.push('/cart')} style={{ padding: 10 }}>
 						Finalizar Compra
