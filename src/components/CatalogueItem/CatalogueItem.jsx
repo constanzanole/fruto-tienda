@@ -4,7 +4,7 @@ import cart from '../../data/cart';
 import './CatalogueItem.css';
 
 const CatalogueItem = ({ producto, history }) => {
-  const { state, onAdd, isInCart, onRemoveItem } = useContext(CartContext);
+  const { onAdd, isInCart, onRemoveItem } = useContext(CartContext);
   const [quantity, setQuantity] = useState(producto.quantity);
 
   const decrement = () => {
@@ -20,27 +20,25 @@ const CatalogueItem = ({ producto, history }) => {
       <h2
         className='card-titulo'
         onClick={() => {
-          history.push(`/producto/productId=${producto.id}`);
+          history.push(`/producto/productId=${producto.productId}`);
         }}
       >
-        {producto.nombre}
+        {producto.name}
       </h2>
-      <img
-        src={producto.imagen}
-        alt={producto.nombre}
-        className='Card-Imagen'
-      />
+      <img src={producto.imagen} className='Card-Imagen' />
       <button onClick={decrement}>-</button>
       <span>{quantity}</span>
       <button onClick={increment}>+</button>
       <button
         onClick={() =>
-          isInCart(producto.id)
-            ? onRemoveItem(producto.id)
+          isInCart(producto.productId)
+            ? onRemoveItem(producto.productId)
             : onAdd(producto, quantity)
         }
       >
-        {isInCart(producto.id) ? 'Eliminar del carrito' : 'Agregar al Carrito'}
+        {isInCart(producto.productId)
+          ? 'Eliminar del carrito'
+          : 'Agregar al Carrito'}
       </button>
     </div>
   );
