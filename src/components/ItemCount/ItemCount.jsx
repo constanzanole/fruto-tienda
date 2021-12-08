@@ -1,3 +1,4 @@
+import { Button } from '@chakra-ui/button';
 import React from 'react';
 
 export const ItemCount = ({ itemCount, onAdd }) => {
@@ -18,9 +19,9 @@ export const ItemCount = ({ itemCount, onAdd }) => {
         marginTop: 30,
       }}
     >
-      <button onClick={decreaseQuantity}>-</button>
+      <Button onClick={decreaseQuantity}>-</Button>
       <span style={{ marginLeft: 10, marginRight: 10 }}>{itemCount}</span>
-      <button onClick={increaseQuantity}>+</button>
+      <Button onClick={increaseQuantity}>+</Button>
     </div>
   );
 };
