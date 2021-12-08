@@ -1,3 +1,4 @@
+import { Button } from '@chakra-ui/button';
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Cart } from '../components/Cart/Cart';
@@ -5,7 +6,7 @@ import { CheckOut } from '../components/CheckOut';
 import { CartContext } from '../context/CartContext';
 
 export const CartScreen = () => {
-  const { cart, onRemoveItem } = useContext(CartContext);
+  const { cart, onRemoveItem, clearCart } = useContext(CartContext);
 
   const [showForm, setShowForm] = useState(false);
 
@@ -26,7 +27,7 @@ export const CartScreen = () => {
           0
         )}
       </h1>
-      <button onClick={() => setShowForm(!showForm)}>Terminar Compra</button>
+      <Button onClick={() => setShowForm(!showForm)}>Terminar Compra</Button>
       {showForm && (
         <CheckOut
           order={cart}
@@ -35,6 +36,7 @@ export const CartScreen = () => {
               prevVal + currentValue.precio * currentValue.quantity,
             0
           )}
+          clearCart={clearCart}
         />
       )}
     </div>

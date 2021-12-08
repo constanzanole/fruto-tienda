@@ -1,3 +1,4 @@
+import { Button } from '@chakra-ui/button';
 import React, { useContext, useEffect, useState } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { useHistory } from 'react-router';
@@ -64,7 +65,7 @@ function NavBar({ setCategory }) {
       </div>
       <div className='rightSide'>
         <input type='text' placeholder='Buscar....' />
-        <button>Buscar</button>
+        <Button ml='3'>Buscar</Button>
         <CartItem
           navigateToCart={navigateToCart}
           cantItems={cart.reduce(

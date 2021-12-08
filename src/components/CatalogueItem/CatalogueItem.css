@@ -1,24 +1,24 @@
 body,
 html {
-	padding: 15px;
+  padding: 15px;
 }
 
 .card {
-	width: 400px;
-	height: 520px;
-	border: 1px solid #ddd;
-	border-radius: 5px;
-	box-shadow: rgb(212, 212, 212);
-	margin: 30px;
-	box-shadow: 3px 3px 10px 3px rgb(199, 196, 196);
+  width: 400px;
+  height: 520px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: rgb(212, 212, 212);
+  margin: 30px;
+  box-shadow: 3px 3px 10px 3px rgb(199, 196, 196);
 }
 
 .Card-Imagen {
-	width: 100%;
+  width: 100%;
 }
 
 .card-titulo {
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	font-size: 18px;
-    color: rgb(90, 87, 87);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 18px;
+  color: rgb(90, 87, 87);
 }

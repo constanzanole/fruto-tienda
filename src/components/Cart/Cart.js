@@ -1,3 +1,4 @@
+import { Button } from '@chakra-ui/button';
 import React from 'react';
 
 export const Cart = ({ cartProduct, handleDelete }) => {
@@ -6,9 +7,12 @@ export const Cart = ({ cartProduct, handleDelete }) => {
     <div>
       <h1>{cartProduct.name}</h1>
       <h2>{cartProduct.quantity}</h2>
-      <button onClick={() => handleDelete(cartProduct.id)}>
+      <Button
+        colorScheme='red'
+        onClick={() => handleDelete(cartProduct.productId)}
+      >
         Delete from Cart
-      </button>
+      </Button>
     </div>
   );
 };
