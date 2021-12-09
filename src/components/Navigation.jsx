@@ -8,13 +8,11 @@ import { DetailItem } from './DetailItem/DetailItem';
 import NavBar from './NavBar/NavBar';
 
 export const Navigation = () => {
-  const { products, fetchProducts } = useContext(ProductsContext);
-  const [loading, setLoading] = useState(true);
+  const { products, fetchProducts, loading } = useContext(ProductsContext);
   const [category, setCategory] = useState();
 
   useEffect(() => {
     fetchProducts();
-    setLoading(false);
   }, []);
 
   return (
